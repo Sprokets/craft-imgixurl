@@ -73,7 +73,5 @@ class ImgixUrlVariable
 
     return empty($imgPath) ? $img : $imgPath;
 
-
-    // https://ralstoninstcms.imgix.net/slideshow/RI-hero-DCAP-pressure-test-pumps.jpg?auto=compress,format&w=200
   }
 }
