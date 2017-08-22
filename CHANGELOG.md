@@ -4,4 +4,3 @@
 
 * Initial release
 
-Brought to you by [Sprokets](http://sprokets.net)
