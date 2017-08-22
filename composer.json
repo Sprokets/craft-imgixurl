@@ -1,0 +1,14 @@
+{
+	"name": "/imgixurl",
+	"description": "Build imgix urls, including secure images.",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Sprokets",
+			"homepage": "http://sprokets.net"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}
