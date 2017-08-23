@@ -72,7 +72,7 @@ class ImgixUrlPlugin extends BasePlugin
      */
     public function getDocumentationUrl()
     {
-        return 'https://github.com/Sprokets/imgixurl/blob/master/README.md';
+        return 'https://github.com/Sprokets/craft-imgixurl/blob/master/README.md';
     }
 
     /**
@@ -84,7 +84,7 @@ class ImgixUrlPlugin extends BasePlugin
      */
     public function getReleaseFeedUrl()
     {
-        return 'https://raw.githubusercontent.com/Sprokets/imgixurl/master/releases.json';
+        return 'https://raw.githubusercontent.com/Sprokets/craft-imgixurl/master/releases.json';
     }
 
     /**
