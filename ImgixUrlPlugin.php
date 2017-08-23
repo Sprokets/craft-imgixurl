@@ -94,7 +94,7 @@ class ImgixUrlPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '0.0.0';
+        return '0.0.1';
     }
 
     /**
