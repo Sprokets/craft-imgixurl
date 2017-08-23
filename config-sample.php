@@ -9,7 +9,7 @@ return array(
         ),
         'sources' => array(
             array(
-                's3' => 'sampledomain.s3.amazonaws.com',
+                'original' => 'sampledomain.s3.amazonaws.com',
                 'imgix' => 'https://sampledomain.imgix.net',
                 'token' => 'abcde12345', // optional
                 // see https://docs.imgix.com/setup/securing-images for more on secure token.

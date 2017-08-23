@@ -55,10 +55,10 @@ class ImgixUrlVariable
     while ($i < sizeof($sources) && $imgPath == '') {
       $source = $sources[$i];
 
-      $pos = strpos($filteredImg, $source['s3']);
+      $pos = strpos($filteredImg, $source['original']);
 
       if($pos !== false) {
-        $part = substr($filteredImg, $pos + strlen($source['s3'])) . '?' . $settingsString;
+        $part = substr($filteredImg, $pos + strlen($source['original'])) . '?' . $settingsString;
         $imgPath = $source['imgix'] . $part;
 
         if(isset($source['token'])) {
