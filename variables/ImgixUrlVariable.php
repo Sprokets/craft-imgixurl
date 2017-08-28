@@ -39,6 +39,10 @@ class ImgixUrlVariable
 
     $sources = craft()->config->get('sources', 'imgixurl');
 
+    if(!is_array($sources)) {
+      $sources = array();
+    }
+
     $defaultSettings = craft()->config->get('defaultSettings', 'imgixurl');
 
     if(!is_array($defaultSettings)) {

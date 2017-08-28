@@ -1,5 +1,13 @@
 [
     {
+        "version": "0.0.3",
+        "downloadUrl": "https://github.com/Sprokets/craft-imgixurl/archive/master.zip",
+        "date": "2017-08-28T10:03:21.257Z",
+        "notes": [
+            "Fix config setting to disable url sources"
+        ]
+    },
+    {
         "version": "0.0.2",
         "downloadUrl": "https://github.com/Sprokets/craft-imgixurl/archive/master.zip",
         "date": "2017-08-23T08:28:21.257Z",

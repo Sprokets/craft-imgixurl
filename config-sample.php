@@ -16,7 +16,9 @@ return array(
             )
         )
     )
-    // '.dev' => array()
+    // '.dev' => array(
+    //     'sources' => null
+    // )
     // this would allow you to turn off imgix routing on .dev domains, saving you some bandwidth.
     // the full image url would be returned.
 );
