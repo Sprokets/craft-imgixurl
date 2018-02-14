@@ -1,18 +1,18 @@
 {
-    "name": "sprokets/imgix-url",
-    "description": "Build imgix urls, including secure images.",
+    "name": "sprokets/imgixurl",
+    "description": "Build imgix urls from assets, including secure images.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "keywords": [
         "craft",
         "cms",
         "craftcms",
         "craft-plugin",
-        "imgix url"
+        "imgixurl"
     ],
     "support": {
-        "docs": "https://github.com/sprokets/imgix-url/blob/master/README.md",
-        "issues": "https://github.com/sprokets/imgix-url/issues"
+        "docs": "https://github.com/craft-imgixurl/imgixurl/blob/master/README.md",
+        "issues": "https://github.com/craft-imgixurl/imgixurl/issues"
     },
     "license": "MIT",
     "authors": [
@@ -30,11 +30,11 @@
         }
     },
     "extra": {
-        "name": "Imgix Url",
-        "handle": "imgix-url",
-        "hasCpSettings": false,
+        "name": "imgixurl",
+        "handle": "imgixurl",
+        "hasCpSettings": true,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/sprokets/imgix-url/master/CHANGELOG.md",
-        "class": "sprokets\\imgixurl\\ImgixUrl"
+        "changelogUrl": "https://raw.githubusercontent.com/craft-imgixurl/imgixurl/master/CHANGELOG.md",
+        "class": "sprokets\\imgixurl\\Imgixurl"
     }
 }

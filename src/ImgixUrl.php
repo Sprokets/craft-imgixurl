@@ -1,8 +1,8 @@
 <?php
 /**
- * Imgix Url plugin for Craft CMS 3.x
+ * imgixurl plugin for Craft CMS 3.x
  *
- * Build imgix urls, including secure images.
+ * Build imgix urls from assets, including secure images.
  *
  * @link      https://sprokets.net
  * @copyright Copyright (c) 2018 sprokets
@@ -10,7 +10,8 @@
 
 namespace sprokets\imgixurl;
 
-use sprokets\imgixurl\variables\ImgixUrlVariable;
+use sprokets\imgixurl\variables\ImgixurlVariable;
+use sprokets\imgixurl\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -31,20 +32,22 @@ use yii\base\Event;
  * https://craftcms.com/docs/plugins/introduction
  *
  * @author    sprokets
- * @package   ImgixUrl
- * @since     1.0.0
+ * @package   Imgixurl
+ * @since     2.0.0
  *
+ * @property  Settings $settings
+ * @method    Settings getSettings()
  */
-class ImgixUrl extends Plugin
+class Imgixurl extends Plugin
 {
     // Static Properties
     // =========================================================================
 
     /**
      * Static property that is an instance of this plugin class so that it can be accessed via
-     * ImgixUrl::$plugin
+     * Imgixurl::$plugin
      *
-     * @var ImgixUrl
+     * @var Imgixurl
      */
     public static $plugin;
 
@@ -56,14 +59,14 @@ class ImgixUrl extends Plugin
      *
      * @var string
      */
-    public $schemaVersion = '1.0.0';
+    public $schemaVersion = '2.0.0';
 
     // Public Methods
     // =========================================================================
 
     /**
      * Set our $plugin static property to this class so that it can be accessed via
-     * ImgixUrl::$plugin
+     * Imgixurl::$plugin
      *
      * Called after the plugin class is instantiated; do any one-time initialization
      * here such as hooks and events.
@@ -84,50 +87,25 @@ class ImgixUrl extends Plugin
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('imgixUrl', ImgixUrlVariable::class);
+                $variable->set('imgixurl', ImgixurlVariable::class);
             }
         );
 
-        // Do something after we're installed
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    // We were just installed
-                }
-            }
-        );
 
-/**
- * Logging in Craft involves using one of the following methods:
- *
- * Craft::trace(): record a message to trace how a piece of code runs. This is mainly for development use.
- * Craft::info(): record a message that conveys some useful information.
- * Craft::warning(): record a warning message that indicates something unexpected has happened.
- * Craft::error(): record a fatal error that should be investigated as soon as possible.
- *
- * Unless `devMode` is on, only Craft::warning() & Craft::error() will log to `craft/storage/logs/web.log`
- *
- * It's recommended that you pass in the magic constant `__METHOD__` as the second parameter, which sets
- * the category to the method (prefixed with the fully qualified class name) where the constant appears.
- *
- * To enable the Yii debug toolbar, go to your user account in the AdminCP and check the
- * [] Show the debug toolbar on the front end & [] Show the debug toolbar on the Control Panel
- *
- * http://www.yiiframework.com/doc-2.0/guide-runtime-logging.html
- */
-        Craft::info(
-            Craft::t(
-                'imgix-url',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
     }
 
     // Protected Methods
     // =========================================================================
+
+    /**
+     * Creates and returns the model used to store the plugin’s settings.
+     *
+     * @return \craft\base\Model|null
+     */
+    protected function createSettingsModel()
+    {
+        return new Settings();
+    }
+
 
 }

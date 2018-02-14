@@ -1,8 +1,8 @@
 <?php
 /**
- * Imgix Url plugin for Craft CMS 3.x
+ * imgixurl plugin for Craft CMS 3.x
  *
- * Build imgix urls, including secure images.
+ * Build imgix urls from assets, including secure images.
  *
  * @link      https://sprokets.net
  * @copyright Copyright (c) 2018 sprokets
@@ -10,47 +10,92 @@
 
 namespace sprokets\imgixurl\variables;
 
-use sprokets\imgixurl\ImgixUrl;
+use sprokets\imgixurl\Imgixurl;
 
 use Craft;
 
 /**
- * Imgix Url Variable
+ * imgixurl Variable
  *
  * Craft allows plugins to provide their own template variables, accessible from
- * the {{ craft }} global variable (e.g. {{ craft.imgixUrl }}).
+ * the {{ craft }} global variable (e.g. {{ craft.imgixurl }}).
  *
  * https://craftcms.com/docs/plugins/variables
  *
  * @author    sprokets
- * @package   ImgixUrl
- * @since     1.0.0
+ * @package   Imgixurl
+ * @since     2.0.0
  */
-class ImgixUrlVariable
+class ImgixurlVariable
 {
     // Public Methods
     // =========================================================================
 
     /**
-     * Whatever you want to output to a Twig template can go into a Variable method.
-     * You can have as many variable functions as you want.  From any Twig template,
-     * call it like this:
      *
-     *     {{ craft.imgixUrl.exampleVariable }}
-     *
-     * Or, if your variable requires parameters from Twig:
-     *
-     *     {{ craft.imgixUrl.exampleVariable(twigValue) }}
-     *
-     * @param null $optional
+     * @param object $imgInput Craft asset
+     * @param object $settings settings overrides
      * @return string
      */
-    public function exampleVariable($optional = null)
-    {
-        $result = "And away we go to the Twig template...";
-        if ($optional) {
-            $result = "I'm feeling optional today...";
+    function getUrl($imgInput, $settings=array()) {
+      // print_r(\sprokets\imgixurl\Imgixurl::getInstance()->getSettings()->sources);
+      // die();
+      $img = $imgInput;
+      if(!is_string($imgInput)) {
+        $img = $imgInput->getUrl();
+      }
+
+      $sources = ImgixUrl::getInstance()->getSettings()->sources; //craft()->config->get('sources', 'imgixurl');
+
+
+      if(!is_array($sources)) {
+
+        $transSettings = array();
+        if(isset($settings['w'])) {
+          $transSettings['width'] = $settings['w'];
         }
-        return $result;
+
+        if(isset($settings['h'])) {
+          $transSettings['height'] = $settings['h'];
+        }
+
+        return $imgInput->getUrl($transSettings);
+
+      }
+
+      $defaultSettings = ImgixUrl::getInstance()->getSettings()->defaultSettings;
+
+      if(!is_array($defaultSettings)) {
+        $defaultSettings = array();
+      }
+
+      $settingsString = http_build_query(array_merge($defaultSettings, $settings));
+
+      $filteredImg = explode('?', $img)[0];
+
+      $imgPath = '';
+      $i = 0;
+
+      while ($i < sizeof($sources) && $imgPath == '') {
+        $source = $sources[$i];
+
+        $pos = strpos($filteredImg, $source['original']);
+
+        if($pos !== false) {
+          $part = substr($filteredImg, $pos + strlen($source['original'])) . '?' . $settingsString;
+          $imgPath = $source['imgix'] . $part;
+
+          if(isset($source['token'])) {
+            $imgPath .= '&s=' . md5($source['token'] . $part);
+          }
+        }
+        $i++;
+      }
+
+
+
+
+      return empty($imgPath) ? $img : $imgPath;
+
     }
 }
