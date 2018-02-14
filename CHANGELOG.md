@@ -1,17 +1,9 @@
 # Imgix Url Changelog
 
-## 0.0.3 -- 2017-08-23
-- Fix config setting to disable url sources
+All notable changes to this project will be documented in this file.
 
-## 0.0.2 -- 2017-08-23
-- Rename repository
+The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 0.0.1 -- 2017-08-23
-
-- Change `s3` property name to `original` in config
-
-
-## 0.0.0 -- 2017-08-22
-
+## 1.0.0 - 2018-02-14
+### Added
 - Initial release
-
