@@ -2,7 +2,7 @@
   "name": "sprokets/imgixurl",
   "description": "Build imgix urls from assets, including secure images.",
   "type": "craft-plugin",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "keywords": [
     "craft",
     "cms",
