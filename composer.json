@@ -1,43 +1,43 @@
 {
-    "name": "sprokets/imgix-url",
-    "description": "Imgix Url",
-    "type": "craft-plugin",
-    "version": "3.0.0",
-    "keywords": [
-        "craft",
-        "cms",
-        "craftcms",
-        "craft-plugin",
-        "imgix url"
-    ],
-    "support": {
-        "docs": "https://github.com/sprokets/craft-imgixurl/imgix-url/blob/master/README.md",
-        "issues": "https://github.com/sprokets/craft-imgixurl/imgix-url/issues"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "sprokets",
-            "homepage": "https://www.sprokets.com"
-        }
-    ],
-    "require": {
-        "craftcms/cms": "^3.0.0-RC1"
-    },
-    "autoload": {
-        "psr-4": {
-          "sprokets\\imgixurl\\": "src/"
-        }
-    },
-    "extra": {
-        "name": "Imgix Url",
-        "handle": "imgix-url",
-        "hasCpSettings": false,
-        "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/sprokets/craft-imgixurl/imgix-url/master/CHANGELOG.md",
-        "components": {
-            "imgixUrlService": "sprokets\\imgixurl\\services\\ImgixUrlService"
-        },
-        "class": "sprokets\\imgixurl\\ImgixUrl"
+  "name": "sprokets/imgix-url",
+  "description": "Imgix Url",
+  "type": "craft-plugin",
+  "version": "3.0.1",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "imgix url"
+  ],
+  "support": {
+    "docs": "https://github.com/sprokets/craft-imgixurl/imgix-url/blob/master/README.md",
+    "issues": "https://github.com/sprokets/craft-imgixurl/imgix-url/issues"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "sprokets",
+      "homepage": "https://www.sprokets.com"
     }
+  ],
+  "require": {
+    "craftcms/cms": "^3.0.0-RC1"
+  },
+  "autoload": {
+    "psr-4": {
+      "sprokets\\imgixurl\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Imgix Url",
+    "handle": "imgix-url",
+    "hasCpSettings": false,
+    "hasCpSection": false,
+    "changelogUrl": "https://raw.githubusercontent.com/sprokets/craft-imgixurl/imgix-url/master/CHANGELOG.md",
+    "components": {
+      "imgixUrlService": "sprokets\\imgixurl\\services\\ImgixUrlService"
+    },
+    "class": "sprokets\\imgixurl\\ImgixUrl"
+  }
 }
