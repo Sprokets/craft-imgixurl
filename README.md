@@ -1,6 +1,6 @@
-# imgixurl plugin for Craft CMS 3.x
+# Imgix Url plugin for Craft CMS 3.x
 
-Build imgix urls from assets, including secure images.
+Imgix Url
 
 ![Screenshot](resources/img/plugin-logo.png)
 
@@ -18,26 +18,26 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require craft-imgixurl/imgixurl
+        composer require sprokets/craft-imgixurl/imgix-url
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for imgixurl.
+3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Imgix Url.
 
-## imgixurl Overview
-
--Insert text here-
-
-## Configuring imgixurl
+## Imgix Url Overview
 
 -Insert text here-
 
-## Using imgixurl
+## Configuring Imgix Url
 
 -Insert text here-
 
-## imgixurl Roadmap
+## Using Imgix Url
+
+-Insert text here-
+
+## Imgix Url Roadmap
 
 Some things to do, and ideas for potential features:
 
 * Release it
 
-Brought to you by [sprokets](https://sprokets.net)
+Brought to you by [sprokets](https://www.sprokets.com)
