@@ -12,6 +12,7 @@ namespace sprokets\imgixurl;
 
 use sprokets\imgixurl\services\ImgixUrlService as ImgixUrlServiceService;
 use sprokets\imgixurl\variables\ImgixUrlVariable;
+use sprokets\imgixurl\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -131,5 +132,13 @@ class ImgixUrl extends Plugin
 
     // Protected Methods
     // =========================================================================
-
+    /**
+     * Creates and returns the model used to store the plugin’s settings.
+     *
+     * @return \craft\base\Model|null
+     */
+    protected function createSettingsModel()
+    {
+        return new Settings();
+    }
 }
