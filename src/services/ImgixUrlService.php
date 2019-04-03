@@ -46,15 +46,15 @@ class ImgixUrlService extends Component
      * @return string
      */
     public function getUrl($imgInput, $settings=array()) {
-        // print_r(\sprokets\imgixurl\Imgixurl::getInstance()->getSettings()->sources);
-        // die();
+
         $img = $imgInput;
         if(!is_string($imgInput)) {
           $img = $imgInput->getUrl();
         }
 
-        $sources = ImgixUrl::getInstance()->getSettings()->sources; //craft()->config->get('sources', 'imgixurl');
 
+        $config = Craft::$app->config->getConfigFromFile('imgixurl');
+        $sources = $config['sources'];
 
         if(!is_array($sources)) {
 
@@ -71,7 +71,7 @@ class ImgixUrlService extends Component
 
         }
 
-        $defaultSettings = ImgixUrl::getInstance()->getSettings()->defaultSettings;
+        $defaultSettings = $config['defaultSettings'];
 
         if(!is_array($defaultSettings)) {
           $defaultSettings = array();
