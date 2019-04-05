@@ -45,7 +45,7 @@ class ImgixUrlVariable
      * @param null $optional
      * @return string
      */
-    public function getUrl($imgInput, $settings)
+    public function getUrl($imgInput, $settings=[])
     {
         return ImgixUrl::$plugin->imgixUrlService->getUrl($imgInput, $settings);
     }

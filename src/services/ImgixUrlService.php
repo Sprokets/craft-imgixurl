@@ -45,7 +45,7 @@ class ImgixUrlService extends Component
      * @param object $settings settings overrides
      * @return string
      */
-    public function getUrl($imgInput, $settings=array()) {
+    public function getUrl($imgInput, $settings=[]) {
 
         $img = $imgInput;
         if(!is_string($imgInput)) {
