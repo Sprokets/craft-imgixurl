@@ -50,6 +50,12 @@ class ImgixUrlService extends Component
         $img = $imgInput;
         if(!is_string($imgInput)) {
           $img = $imgInput->getUrl();
+
+          // circumvent imageOptimize if installed
+          if(strpos($img, 'imgix') !== false) {
+            $vol = $imgInput->getVolume()->getRootUrl();
+            $img = $vol . (substr($vol , -1)=='/' ? '' : '/') . $imgInput->getPath();
+          }
         }
 
 
