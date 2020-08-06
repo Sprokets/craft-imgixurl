@@ -49,10 +49,12 @@ class ImgixUrlService extends Component
 
         $img = $imgInput;
         if(!is_string($imgInput)) {
-          $img = $imgInput->getUrl();
+          $isImageOptimizedInstalled = Craft::$app->plugins->getPlugin('image-optimize');
 
-          // circumvent imageOptimize if installed
-          if(strpos($img, 'imgix') !== false) {
+          if(!$isImageOptimizedInstalled) {
+            $img = $imgInput->getUrl();
+          }
+          else {
             $vol = $imgInput->getVolume()->getRootUrl();
             $img = $vol . (substr($vol , -1)=='/' ? '' : '/') . $imgInput->getPath();
           }
