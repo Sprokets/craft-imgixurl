@@ -61,6 +61,13 @@ class ImgixUrl extends Plugin
      */
     public $schemaVersion = '3.0.0';
 
+    /**
+     * Check if imageoptimize is installed.
+     *
+     * @var string
+     */
+    public $isImageOptimizedInstalled;
+
     // Public Methods
     // =========================================================================
 
