@@ -49,4 +49,8 @@ class ImgixUrlVariable
     {
         return ImgixUrl::$plugin->imgixUrlService->getUrl($imgInput, $settings);
     }
+
+    public function getRawAssetUrl($asset) {
+        return ImgixUrl::$plugin->imgixUrlService->getRawAssetUrl($asset);
+    }
 }

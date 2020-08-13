@@ -80,6 +80,8 @@ class ImgixUrl extends Plugin
         parent::init();
         self::$plugin = $this;
 
+        $this->isImageOptimizedInstalled = Craft::$app->plugins->isPluginInstalled('image-optimize');
+
         // Register our variables
         Event::on(
             CraftVariable::class,

@@ -33,18 +33,16 @@ class ImgixUrlService extends Component
     // Public Methods
     // =========================================================================
 
-    /**
-     * This function can literally be anything you want, and you can have as many service
-     * functions as you want
-     *
-     * From any other plugin file, call it like this:
-     *
-     *     ImgixUrl::$plugin->imgixUrlService->getUrl()
-     *
-     * @param object $imgInput Craft asset
-     * @param object $settings settings overrides
-     * @return string
-     */
+    public function getRawAssetUrl($asset) {
+      if(!ImgixUrl::$plugin->isImageOptimizedInstalled) {
+          return $asset->getUrl();
+        }
+        else {
+          $vol = $asset->getVolume()->getRootUrl();
+          return $vol . (substr($vol , -1)=='/' ? '' : '/') . $asset->getPath();
+      }
+    }
+
     public function getUrl($imgInput, $settings=[]) {
 
         $img = $imgInput;
