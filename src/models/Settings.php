@@ -1,4 +1,5 @@
 <?php
+
 /**
  * imgixurl plugin for Craft CMS 3.x
  *
@@ -35,14 +36,12 @@ class Settings extends Model
     // =========================================================================
 
     /**
-     * @var array The default settings configuration.
+     * @var mixed array The default settings configuration.
      */
     public $defaultSettings = [];
 
     /**
-     * @var array The sources list.
+     * @var mixed array The sources list.
      */
     public $sources = [];
-
-
 }

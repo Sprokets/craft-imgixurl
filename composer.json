@@ -2,7 +2,7 @@
   "name": "sprokets/imgix-url",
   "description": "Imgix Url",
   "type": "craft-plugin",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "keywords": [
     "craft",
     "cms",
@@ -22,7 +22,8 @@
     }
   ],
   "require": {
-    "craftcms/cms": "^3.0.0-RC1"
+    "php": "^8.0.2",
+    "craftcms/cms": "^4.0.0-alpha"
   },
   "autoload": {
     "psr-4": {
@@ -39,5 +40,20 @@
       "imgixUrlService": "sprokets\\imgixurl\\services\\ImgixUrlService"
     },
     "class": "sprokets\\imgixurl\\ImgixUrl"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": false,
+      "craftcms/plugin-installer": false
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.10",
+    "craftcms/rector": "dev-main"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "phpstan": "vendor/bin/phpstan analyze"
   }
 }

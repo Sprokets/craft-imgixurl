@@ -1,0 +1,15 @@
+parameters:
+    scanFiles:
+        - vendor/craftcms/cms/src/Craft.php
+        - vendor/yiisoft/yii2/Yii.php
+        - vendor/twig/twig/src/Extension/CoreExtension.php
+    earlyTerminatingMethodCalls:
+        Craft:
+            - dd
+        yii\base\Application:
+            - end
+        yii\base\ErrorHandler:
+            - convertExceptionToError
+    level: 6
+    paths:
+        - src

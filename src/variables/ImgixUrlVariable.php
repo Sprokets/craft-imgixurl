@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Imgix Url plugin for Craft CMS 3.x
  *
@@ -10,9 +11,15 @@
 
 namespace sprokets\imgixurl\variables;
 
-use sprokets\imgixurl\ImgixUrl;
-
 use Craft;
+
+use craft\elements\Asset;
+use Exception;
+use sprokets\imgixurl\ImgixUrl;
+use yii\web\HttpException;
+use yii\db\Exception as DbException;
+use yii\base\InvalidArgumentException;
+use yii\base\InvalidConfigException;
 
 /**
  * Imgix Url Variable
@@ -32,25 +39,29 @@ class ImgixUrlVariable
     // =========================================================================
 
     /**
-     * Whatever you want to output to a Twig template can go into a Variable method.
-     * You can have as many variable functions as you want.  From any Twig template,
-     * call it like this:
-     *
-     *     {{ craft.imgixUrl.exampleVariable }}
-     *
-     * Or, if your variable requires parameters from Twig:
-     *
-     *     {{ craft.imgixUrl.exampleVariable(twigValue) }}
-     *
-     * @param null $optional
-     * @return string
+     * 
+     * @param Asset|string $imgInput 
+     * @param array<mixed> $settings 
+     * @return string|null 
+     * @throws Exception 
+     * @throws HttpException 
+     * @throws DbException 
+     * @throws InvalidArgumentException 
+     * @throws InvalidConfigException 
      */
-    public function getUrl($imgInput, $settings=[])
+    public function getUrl(Asset|string $imgInput, array $settings = []): ?string
     {
         return ImgixUrl::$plugin->imgixUrlService->getUrl($imgInput, $settings);
     }
 
-    public function getRawAssetUrl($asset) {
+    /**
+     * 
+     * @param Asset $asset 
+     * @return string|null
+     * @throws InvalidConfigException 
+     */
+    public function getRawAssetUrl(Asset $asset): ?string
+    {
         return ImgixUrl::$plugin->imgixUrlService->getRawAssetUrl($asset);
     }
 }
