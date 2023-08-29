@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "craft\\imgixurl\\": "src/"
+      "sprokets\\imgixurl\\": "src/"
     }
   },
   "extra": {
@@ -35,8 +35,6 @@
     "hasCpSettings": false,
     "hasCpSection": false,
     "changelogUrl": "https://raw.githubusercontent.com/sprokets/craft-imgixurl/imgix-url/master/CHANGELOG.md",
-    "components": {
-      "imgixUrlService": "craft\\imgixurl\\services\\ImgixUrlService"
-    }
+    "class": "sprokets\\imgixurl\\ImgixUrl"
   }
 }
