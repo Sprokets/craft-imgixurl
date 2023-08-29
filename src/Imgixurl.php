@@ -11,8 +11,7 @@
 
 namespace sprokets\imgixurl;
 
-use sprokets\imgixurl\services\ImgixurlService as ImgixurlServiceService;
-use sprokets\imgixurl\variables\ImgixurlVariable;
+use sprokets\imgixurl\services\ImgixurlService;
 
 use Craft;
 use craft\base\Plugin;
@@ -36,7 +35,7 @@ use yii\base\Event;
  * @package   Imgixurl
  * @since     3.0.0
  *
- * @property  ImgixurlServiceService $imgixUrlService
+ * @property  ImgixurlService $imgixUrlService
  */
 class Imgixurl extends Plugin
 {
@@ -96,7 +95,7 @@ class Imgixurl extends Plugin
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('imgixUrl', ImgixurlVariable::class);
+                $variable->set('imgixUrl', ImgixurlService::class);
             }
         );
 
