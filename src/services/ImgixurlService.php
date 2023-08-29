@@ -9,9 +9,9 @@
  * @copyright Copyright (c) 2019 sprokets
  */
 
-namespace craft\imgixurl\services;
+namespace sprokets\imgixurl\services;
 
-use craft\imgixurl\Imgixurl;
+use sprokets\imgixurl\Imgixurl;
 
 use Craft;
 use yii\base\Component;

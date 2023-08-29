@@ -9,9 +9,9 @@
  * @copyright Copyright (c) 2019 sprokets
  */
 
-namespace craft\imgixurl\variables;
+namespace sprokets\imgixurl\variables;
 
-use craft\imgixurl\Imgixurl;
+use sprokets\imgixurl\Imgixurl;
 
 use Craft;
 
