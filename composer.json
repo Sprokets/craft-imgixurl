@@ -35,6 +35,6 @@
     "hasCpSettings": false,
     "hasCpSection": false,
     "changelogUrl": "https://raw.githubusercontent.com/sprokets/craft-imgixurl/imgix-url/master/CHANGELOG.md",
-    "class": "sprokets\\imgixurl\\ImgixUrl"
+    "class": "sprokets\\imgixurl\\Imgixurl"
   }
 }

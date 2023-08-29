@@ -11,8 +11,8 @@
 
 namespace sprokets\imgixurl;
 
-use sprokets\imgixurl\services\ImgixUrlService as ImgixUrlServiceService;
-use sprokets\imgixurl\variables\ImgixUrlVariable;
+use sprokets\imgixurl\services\ImgixurlService as ImgixurlServiceService;
+use sprokets\imgixurl\variables\ImgixurlVariable;
 
 use Craft;
 use craft\base\Plugin;
@@ -33,21 +33,21 @@ use yii\base\Event;
  * https://craftcms.com/docs/plugins/introduction
  *
  * @author    sprokets
- * @package   ImgixUrl
+ * @package   Imgixurl
  * @since     3.0.0
  *
- * @property  ImgixUrlServiceService $imgixUrlService
+ * @property  ImgixurlServiceService $imgixUrlService
  */
-class ImgixUrl extends Plugin
+class Imgixurl extends Plugin
 {
     // Static Properties
     // =========================================================================
 
     /**
      * Static property that is an instance of this plugin class so that it can be accessed via
-     * ImgixUrl::$plugin
+     * Imgixurl::$plugin
      *
-     * @var ImgixUrl
+     * @var Imgixurl
      */
     public static $plugin;
 
@@ -73,7 +73,7 @@ class ImgixUrl extends Plugin
 
     /**
      * Set our $plugin static property to this class so that it can be accessed via
-     * ImgixUrl::$plugin
+     * Imgixurl::$plugin
      *
      * Called after the plugin class is instantiated; do any one-time initialization
      * here such as hooks and events.
@@ -96,7 +96,7 @@ class ImgixUrl extends Plugin
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('imgixUrl', ImgixUrlVariable::class);
+                $variable->set('imgixUrl', ImgixurlVariable::class);
             }
         );
 

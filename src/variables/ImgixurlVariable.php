@@ -11,7 +11,7 @@
 
 namespace craft\imgixurl\variables;
 
-use craft\imgixurl\ImgixUrl;
+use craft\imgixurl\Imgixurl;
 
 use Craft;
 
@@ -24,10 +24,10 @@ use Craft;
  * https://craftcms.com/docs/plugins/variables
  *
  * @author    sprokets
- * @package   ImgixUrl
+ * @package   Imgixurl
  * @since     3.0.0
  */
-class ImgixUrlVariable
+class ImgixurlVariable
 {
     // Public Methods
     // =========================================================================
@@ -48,11 +48,11 @@ class ImgixUrlVariable
      */
     public function getUrl($imgInput, $settings = [])
     {
-        return ImgixUrl::$plugin->imgixUrlService->getUrl($imgInput, $settings);
+        return Imgixurl::$plugin->imgixUrlService->getUrl($imgInput, $settings);
     }
 
     public function getRawAssetUrl($asset)
     {
-        return ImgixUrl::$plugin->imgixUrlService->getRawAssetUrl($asset);
+        return Imgixurl::$plugin->imgixUrlService->getRawAssetUrl($asset);
     }
 }
