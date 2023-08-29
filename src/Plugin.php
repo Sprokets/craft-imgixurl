@@ -8,11 +8,11 @@
  * @copyright Copyright (c) 2019 sprokets
  */
 
-namespace sprokets\imgixurl;
+namespace craft\imgixurl;
 
-use sprokets\imgixurl\services\ImgixUrlService as ImgixUrlServiceService;
-use sprokets\imgixurl\variables\ImgixUrlVariable;
-use sprokets\imgixurl\models\Settings;
+use craft\imgixurl\services\ImgixUrlService as ImgixUrlServiceService;
+use craft\imgixurl\variables\ImgixUrlVariable;
+use craft\imgixurl\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
