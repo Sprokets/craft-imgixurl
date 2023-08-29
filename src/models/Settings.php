@@ -8,9 +8,9 @@
  * @copyright Copyright (c) 2018 sprokets
  */
 
-namespace sprokets\imgixurl\models;
+namespace craft\imgixurl\models;
 
-use sprokets\imgixurl\ImgixUrl;
+use craft\imgixurl\ImgixUrl;
 
 use Craft;
 use craft\base\Model;

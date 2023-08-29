@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Imgix Url plugin for Craft CMS 3.x
  *
@@ -8,9 +9,9 @@
  * @copyright Copyright (c) 2019 sprokets
  */
 
-namespace sprokets\imgixurl\variables;
+namespace craft\imgixurl\variables;
 
-use sprokets\imgixurl\ImgixUrl;
+use craft\imgixurl\ImgixUrl;
 
 use Craft;
 
@@ -45,12 +46,13 @@ class ImgixUrlVariable
      * @param null $optional
      * @return string
      */
-    public function getUrl($imgInput, $settings=[])
+    public function getUrl($imgInput, $settings = [])
     {
         return ImgixUrl::$plugin->imgixUrlService->getUrl($imgInput, $settings);
     }
 
-    public function getRawAssetUrl($asset) {
+    public function getRawAssetUrl($asset)
+    {
         return ImgixUrl::$plugin->imgixUrlService->getRawAssetUrl($asset);
     }
 }
