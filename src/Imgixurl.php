@@ -86,6 +86,10 @@ class Imgixurl extends Plugin
         parent::init();
         self::$plugin = $this;
 
+        $this->setComponents([
+            'imgixUrlService' => ImgixUrlService::class,
+        ]);
+
         $this->isImageOptimizedInstalled = Craft::$app->plugins->isPluginInstalled('image-optimize');
 
         // Register our variables
@@ -95,7 +99,7 @@ class Imgixurl extends Plugin
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('imgixUrl', ImgixurlService::class);
+                $variable->set('imgixUrl', $this->imgixUrlService);
             }
         );
 
