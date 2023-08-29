@@ -37,7 +37,6 @@
     "changelogUrl": "https://raw.githubusercontent.com/sprokets/craft-imgixurl/imgix-url/master/CHANGELOG.md",
     "components": {
       "imgixUrlService": "craft\\imgixurl\\services\\ImgixUrlService"
-    },
-    "class": "craft\\imgixurl\\ImgixUrl"
+    }
   }
 }
