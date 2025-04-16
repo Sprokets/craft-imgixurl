@@ -1,8 +1,8 @@
-# Imgix Url plugin for Craft CMS 4.x
+# Imgix Url plugin for Craft CMS 5.x
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0.0-alpha or later.
+This plugin requires Craft CMS 5.0.0 or later.
 
 ## Installation
 
